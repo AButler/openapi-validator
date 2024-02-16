@@ -29,6 +29,6 @@ curl --request POST \
   --form requestUrl=<RequestUrl> \
   --form requestMethod=GET \
   --form responseStatus=200 \
-  --form 'specification=@openapi-spec.yaml' \
-  --form 'responseBody=@response.json'
+  --form specification=@openapi-spec.yaml \
+  --form responseBody=@response.json
 ```
