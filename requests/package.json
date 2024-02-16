@@ -1,7 +1,0 @@
-{
-  "name": "requests",
-  "version": "0.0.0",
-  "dependencies": {
-    "form-data": "^4.0.0"
-  }
-}
