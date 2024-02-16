@@ -5,6 +5,8 @@ A web service for validating a JSON response against an OpenApi schema
 # Build Container
 
 ```bash
+npm install
+npm run build
 docker build -t openapi-validator .
 ```
 
