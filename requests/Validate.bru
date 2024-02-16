@@ -1,0 +1,29 @@
+meta {
+  name: Validate
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/validate
+  body: multipartForm
+  auth: none
+}
+
+vars:pre-request {
+  requestUrl: https://api.payments-services.co.uk/directory/v1.0/organisation/BnCiKvwCKptuGxB239/software-statement/DORCBL5fTwJaW8jR6bnCFp
+  requestMethod: GET
+  responseStatus: 200
+  specification: C:/dev/payuk/docs/directory_api/directory-api.yaml
+  responseBody: C:/temp/test-response/software-statement-get.json
+}
+
+script:pre-request {
+  form
+    .append('requestUrl', bru.getVar('requestUrl'))
+    .append('requestMethod', bru.getVar('requestMethod'))
+    .append('responseStatus', bru.getVar('responseStatus'))
+    .append('specification', bru.getVar('specification'), isFile = true)
+    .append('responseBody', bru.getVar('responseBody'), isFile = true)
+  ;
+}

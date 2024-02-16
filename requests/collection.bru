@@ -1,0 +1,18 @@
+script:pre-request {
+  const FormData = require('form-data');
+  const fs = require('fs');
+  
+  function Form() {}
+  Form.prototype.is = new FormData();
+  Form.prototype.append = function(key, value, isFile = false) {
+    if (isFile) {
+      value = fs.createReadStream(value);
+    }
+    this.is.append(key, value);
+    req.setBody(this.is);
+    return this;
+  };
+  const form = new Form();
+  
+  module.exports = form;
+}

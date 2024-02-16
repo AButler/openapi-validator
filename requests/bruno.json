@@ -1,0 +1,11 @@
+{
+  "version": "1",
+  "name": "OpenAPI Validator",
+  "type": "collection",
+  "scripts": {
+    "moduleWhitelist": ["form-data"],
+    "filesystemAccess": {
+      "allow": true
+    }
+  }
+}
